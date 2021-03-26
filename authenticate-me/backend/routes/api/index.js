@@ -5,7 +5,7 @@ const { User } = require('../../db/models');
 const { restoreUser } = require('../../utils/auth.js');
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-
+const { requireAuth } = require('../../utils/auth.js');
 
 router.use('/session', sessionRouter);
 
@@ -29,7 +29,7 @@ router.get(
   }
 );
 
-const { requireAuth } = require('../../utils/auth.js');
+
 router.get(
   '/require-auth',
   requireAuth,
