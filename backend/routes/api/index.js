@@ -11,6 +11,11 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
+
+
+
+
+
 router.get('/set-token-cookie', asyncHandler(async (req, res) => {
   const user = await User.findOne({
       where: {
@@ -20,7 +25,6 @@ router.get('/set-token-cookie', asyncHandler(async (req, res) => {
   setTokenCookie(res, user);
   return res.json({ user });
 }));
-
 router.get(
   '/restore-user',
   restoreUser,
@@ -28,7 +32,6 @@ router.get(
     return res.json(req.user);
   }
 );
-
 
 router.get(
   '/require-auth',
