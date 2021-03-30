@@ -6,7 +6,19 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+      },
+      firstName: {
+        type: Sequelize.STRING(20),
+        allowNull: false,
+      },
+      lastName: {
+        type: Sequelize.STRING(20),
+        allowNull: false,
+      },
+      avatarUrl: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       username: {
         type: Sequelize.STRING(30),
