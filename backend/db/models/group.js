@@ -7,7 +7,14 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER
   }, {});
   Group.associate = function(models) {
-    // associations can be defined here
+    const columnMapping = {
+      through: 'Members',
+      otherKey: 'userId',
+      foreignKey: 'groupId'
+    }
+    Group.belongsToMany(models.User, columnMapping);
+    Group.belongsTo(models.User, { foreignKey: 'userId'});
+    Group.hasMany(models.Event, { foreignKey: 'groupId'});
   };
   return Group;
 };

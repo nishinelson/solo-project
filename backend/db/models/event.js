@@ -12,7 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     groupId: DataTypes.INTEGER
   }, {});
   Event.associate = function(models) {
-    // associations can be defined here
+    const columnMappingEvents = {
+      through: 'RSVPs',
+      otherKey: 'userId',
+      foreignKey: 'eventId'
+    }
+
+    Event.belongsToMany(model.User, columnMappingEvents);
+    Event.belongsTo(models.Group, { foreignKey: 'groupId'});
   };
   return Event;
 };

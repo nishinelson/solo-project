@@ -50,8 +50,21 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
   User.associate = function(models) {
-    User.hasMany(models.Group, { foreignKey: 'userId'});
-    User.hasMany(models.RSVP, { foreignKey: 'userId' });
+    const columnMapping = {
+      through: 'Members',
+      otherKey: 'groupId',
+      foreignKey: 'userId'
+    }
+
+    const columnMappingEvents = {
+      through: 'RSVPs',
+      otherKey: 'eventId',
+      foreignKey: 'userId'
+    }
+
+    User.hasMany(models.Group, { foreignKey: 'userId' });
+    User.belongsToMany(models.Group, columnMapping);
+    User.belongsToMany(models.Event, columnMappingEvents);
   };
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
