@@ -12,6 +12,8 @@ module.exports = {
         email: 'demo@user.io',
         username: 'Demo-lition',
         hashedPassword: bcrypt.hashSync('password'),
+        city: 'LA',
+        state: 'CA',
       },
       {
         firstName: faker.name.firstName(),
@@ -20,6 +22,8 @@ module.exports = {
         email: faker.internet.email(),
         username: 'FakeUser1',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        city: 'San Diego',
+        state: 'CA',
       },
       {
         firstName: faker.name.firstName(),
@@ -28,6 +32,8 @@ module.exports = {
         email: faker.internet.email(),
         username: 'FakeUser2',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        city: 'Boulder',
+        state: 'CO',
       },
     ], {});
   },

@@ -2,6 +2,16 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
+    return queryInterface.bulkInsert('Members', [
+      {
+      userId: 3,
+      groupId: 1
+    },
+    {
+      userId: 2,
+      groupId: 1
+    },
+  ], {});
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
