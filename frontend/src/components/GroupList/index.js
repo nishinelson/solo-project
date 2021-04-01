@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { getGroups } from '../../store/groups';
 
 function GroupList () {
-    const groups = useSelector(state => state.groups)
+    const groups = useSelector(state => Object.values(state.groups))
     console.log("groups:", groups);
     const dispatch = useDispatch();
 
@@ -12,9 +12,9 @@ function GroupList () {
     }, [dispatch]);
 
     const renderGroups = () => {
-        return Object.values(groups).map(group =>{
+        return groups.map(group =>{
             return (
-                <li>
+                <li key={group.id}>
                     {group.name} - Description: {group.about}
                 </li>
             )
