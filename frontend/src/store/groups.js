@@ -13,12 +13,12 @@ export const setGroups = (groups) => {
 export const addGroup = (group) => {
     return {
         type: ADD_GROUP,
-        payload: groups
+        payload: group
     }
 }
 
 export const getGroups = () => async (dispatch) => {
-    const respinse = await csrfFetch('/api/groups');
+    const response = await csrfFetch('/api/groups');
     if (!response.ok) {
         throw response;
     }
