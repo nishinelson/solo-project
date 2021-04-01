@@ -8,7 +8,7 @@ module.exports = {
       {
         firstName: 'Demo',
         lastName: 'Lition',
-        avatarUrl: faker.internet.avatar(),
+        avatarUrl: faker.image.imageUrl(),
         email: 'demo@user.io',
         username: 'Demo-lition',
         hashedPassword: bcrypt.hashSync('password'),
@@ -18,7 +18,7 @@ module.exports = {
       {
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
-        avatarUrl: faker.internet.avatar(),
+        avatarUrl: faker.image.imageUrl(),
         email: faker.internet.email(),
         username: 'FakeUser1',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
@@ -28,7 +28,7 @@ module.exports = {
       {
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
-        avatarUrl: faker.internet.avatar(),
+        avatarUrl: faker.image.imageUrl(),
         email: faker.internet.email(),
         username: 'FakeUser2',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),

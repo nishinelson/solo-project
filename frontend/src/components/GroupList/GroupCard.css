@@ -1,0 +1,16 @@
+.card {
+    height: 75px;
+    display: grid;
+    grid-template-columns: 75px 1fr;
+}
+
+.cardPic{
+    height: 65px;
+    width: 65px;
+    border-radius: 5px;
+    grid-column: 1;
+}
+
+.cardContent{
+    grid-column: 2;
+}

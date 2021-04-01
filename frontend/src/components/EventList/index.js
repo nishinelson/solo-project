@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getEvents } from '../../store/events';
+import EventCard from './EventCard';
 
 function EventList () {
     const events = useSelector( state => Object.values(state.events));
@@ -12,9 +13,9 @@ function EventList () {
 
     const renderEvents = events.map(event =>{
         return (
-            <li>
-                {event.name} - Details: {event.details}
-            </li>
+            <div>
+                <EventCard event={event}/>
+            </div>
         )
     })
 

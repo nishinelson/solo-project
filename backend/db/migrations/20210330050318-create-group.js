@@ -26,6 +26,14 @@ module.exports = {
         allowNull: false,
         references: { model: "Users" }
       },
+      city: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      state: {
+        type: Sequelize.STRING(2),
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

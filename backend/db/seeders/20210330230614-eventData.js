@@ -6,7 +6,7 @@ module.exports = {
       {
         name: 'DnD shenanigans',
         details: faker.lorem.sentence(),
-        imageUrl: faker.internet.avatar(),
+        imageUrl: faker.image.imageUrl(),
         date: faker.date.soon(),
         city: faker.address.city(),
         state: faker.address.stateAbbr(),
@@ -17,7 +17,7 @@ module.exports = {
       {
         name: 'MTG Nemesis Night',
         details: faker.lorem.sentence(),
-        imageUrl: faker.internet.avatar(),
+        imageUrl: faker.image.imageUrl(),
         date: faker.date.soon(),
         city: faker.address.city(),
         state: faker.address.stateAbbr(),

@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     about: DataTypes.STRING,
     imageUrl: DataTypes.STRING,
-    userId: DataTypes.INTEGER
+    userId: DataTypes.INTEGER,
+    city: DataTypes.STRING,
+    state: DataTypes.STRING(2)
   }, {});
   Group.associate = function(models) {
     const columnMapping = {

@@ -6,14 +6,18 @@ module.exports = {
       {
         name: "Nerd League",
         about: faker.lorem.sentence(),
-        imageUrl: faker.internet.avatar(),
-        userId: 2
+        imageUrl: faker.image.imageUrl(),
+        userId: 2,
+        city: "Fullerton",
+        state: "CA"
       },
       {
         name: "mtg cohort",
         about: faker.lorem.sentence(),
-        imageUrl: faker.internet.avatar(),
-        userId: 3
+        imageUrl: faker.image.imageUrl(),
+        userId: 3,
+        city: "San Diego",
+        state: "CA"
       }
     ], {});
     /*
