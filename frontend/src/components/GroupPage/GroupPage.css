@@ -1,0 +1,49 @@
+.page {
+    display: grid;
+    grid-template-rows: 320px 1fr;
+}
+
+.top-half {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.groupImg {
+    height: 300px;
+    width: 600px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.info {
+    height: 300px;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.name {
+    font-size: 32px;
+}
+
+
+.bottom-half {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.about{
+    width: 500px;
+}
+
+.events{
+    width: 500px;
+}
+
+label {
+    font-size: 24px;
+}
