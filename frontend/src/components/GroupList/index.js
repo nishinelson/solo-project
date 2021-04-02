@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getGroups } from '../../store/groups';
 import GroupsCard from './GroupCard';
+import { NavLink } from 'react-router-dom';
 
 function GroupList () {
     const groups = useSelector(state => Object.values(state.groups))
@@ -15,9 +16,9 @@ function GroupList () {
     const renderGroups = () => {
         return groups.map(group =>{
             return (
-                <div>
+                <NavLink to={`/groups/${group.id}`}>
                    <GroupsCard group={group}/>
-                </div>
+                </NavLink>
             )
         });
     };

@@ -26,6 +26,15 @@ export const getGroups = () => async (dispatch) => {
     dispatch(setGroups(groups));
 }
 
+export const getOneGroup = id => async (dispatch) => {
+    const response = await csrfFetch(`/api/groups/${id}`);
+    if (!response.ok) {
+        throw response;
+    }
+    const group = await response.json();
+    dispatch(addGroup(group));
+}
+
 const initialState = {};
 
 const groupReducer = (groups = initialState, action) => {
@@ -39,7 +48,10 @@ const groupReducer = (groups = initialState, action) => {
                 }
             }, {});
         case ADD_GROUP:
-            return
+            return {
+                ...groups,
+                [action.payload.id]: action.group,
+            }
         default:
             return groups;
     }
