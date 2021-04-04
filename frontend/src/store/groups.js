@@ -32,12 +32,14 @@ export const getOneGroup = id => async (dispatch) => {
         throw response;
     }
     const group = await response.json();
+    // console.log(group, "=====================")
     dispatch(addGroup(group));
 }
 
 const initialState = {};
 
 const groupReducer = (groups = initialState, action) => {
+    let newState;
     switch(action.type){
         case SET_GROUPS:
             const groupsPayload = action.payload
@@ -48,9 +50,11 @@ const groupReducer = (groups = initialState, action) => {
                 }
             }, {});
         case ADD_GROUP:
+            // newState = action.payload
             return {
+                // newState
                 ...groups,
-                [action.payload.id]: action.group,
+                [action.payload.id]: action.payload,
             }
         default:
             return groups;

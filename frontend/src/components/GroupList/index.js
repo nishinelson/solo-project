@@ -24,9 +24,9 @@ function GroupList () {
     };
 
     return (
-        <ul>
+        <div>
           {renderGroups()}
-        </ul>
+        </div>
     )
 }
 

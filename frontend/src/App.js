@@ -6,8 +6,9 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import GroupList from "./components/GroupList";
-import EventList from "./components/EventList"
-import GroupPage from "./components/GroupPage"
+import EventList from "./components/EventList";
+import GroupPage from "./components/GroupPage";
+import EventPage from "./components/EventPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,11 +31,14 @@ function App() {
           <Route path="/groups" exact={true}>
             <GroupList/>
           </Route>
-          <Route path="/events">
+          <Route path="/events" exact={true}>
             <EventList/>
           </Route>
           <Route path="/groups/:id">
             <GroupPage/>
+          </Route>
+          <Route path="/events/:id">
+            <EventPage/>
           </Route>
         </Switch>
       )}

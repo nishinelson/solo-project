@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getEvents } from '../../store/events';
 import EventCard from './EventCard';
+import { NavLink } from 'react-router-dom';
 
 function EventList () {
     const events = useSelector( state => Object.values(state.events));
@@ -13,16 +14,16 @@ function EventList () {
 
     const renderEvents = events.map(event =>{
         return (
-            <div>
+            <NavLink to={`/events/${event.id}`}>
                 <EventCard event={event}/>
-            </div>
+            </NavLink>
         )
     })
 
     return (
-        <ul>
+        <div>
             {renderEvents}
-        </ul>
+        </div>
     )
 }
 

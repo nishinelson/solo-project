@@ -17,6 +17,10 @@ export const addEvent = (event) => {
     }
 };
 
+export const getGroupEvents = (id) => async (dispatch) => {
+    const response = await csrfFetch(`/api/groups/${id}`);
+}
+
 export const getEvents = () => async (dispatch) => {
     const response = await csrfFetch('/api/events');
     if(!response.ok){
@@ -25,6 +29,15 @@ export const getEvents = () => async (dispatch) => {
     const events = await response.json();
     dispatch(setEvents(events));
 };
+
+export const getOneEvent = id => async (dispatch) => {
+    const response = await csrfFetch(`/api/events/${id}`);
+    if (!response.ok) {
+        throw response;
+    }
+    const event = await response.json();
+    dispatch(addEvent(event));
+}
 
 const initialState = {};
 
@@ -39,7 +52,10 @@ const eventReducer = (events = initialState, action) =>{
                 }
             }, {});
         case ADD_EVENT:
-            return
+            return {
+                ...events,
+                [action.payload.id]: action.event,
+            }
         default:
             return events;
     }
