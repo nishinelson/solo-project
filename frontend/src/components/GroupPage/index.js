@@ -1,21 +1,22 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getEvents } from '../../store/events';
 import { useParams } from 'react-router-dom';
 import EventCard from '../EventList/EventCard';
 import { getGroups, getOneGroup } from '../../store/groups';
 import { joinGroup } from '../../store/members';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './GroupPage.css';
 
 function GroupPage () {
     const { id } = useParams();
     const group = useSelector( state => state.groups[id]) || {};
     const sessionUser = useSelector(state => state.session.user) || {};
-    // const events = useSelector( state => Object.values(state.events));
-    // const events = useSelector(state => state.events.groupId)
+
     const dispatch = useDispatch();
-    console.log("here!!!!", sessionUser)
+
+    // const [count, setCount] = useState(0);
+
     useEffect(() => {
         dispatch(getEvents())
         dispatch(getOneGroup(id))
@@ -47,8 +48,10 @@ function GroupPage () {
     }
 
     const handleSubmit = e => {
+        e.preventDefault();
         const userId = sessionUser.id;
         dispatch(joinGroup(userId, id))
+        // setCount(count => count + 1)
     }
 
     let form = "";
