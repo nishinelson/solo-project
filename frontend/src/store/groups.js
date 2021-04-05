@@ -17,8 +17,8 @@ export const addGroup = (group) => {
     }
 }
 
-export const getGroups = () => async (dispatch) => {
-    const response = await csrfFetch('/api/groups');
+export const getGroups = (city, state) => async (dispatch) => {
+    const response = await csrfFetch(`/api/groups/${city}/${state}`);
     if (!response.ok) {
         throw response;
     }

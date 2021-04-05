@@ -12,7 +12,7 @@ function EventPage () {
     useEffect(() => {
         dispatch(getOneEvent(id))
     }, [dispatch]);
-    console.log("EVENT!!!:", event.Users)
+
 
     let attendees = [];
 

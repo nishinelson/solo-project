@@ -6,8 +6,13 @@ const { Group, Event, Member } = require('../../db/models');
 const router = express.Router();
 
 // http://localhost:5000/api/groups
-router.get('/', asyncHandler( async (req, res) => {
-    const groups = await Group.findAll();
+router.get('/:city/:state', asyncHandler( async (req, res) => {
+    const { city, state } = req.params;
+    const groups = await Group.findAll({
+        where: {
+            city, state,
+        }
+    });
     res.json(groups)
 }));
 

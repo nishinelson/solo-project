@@ -13,8 +13,8 @@ function Navigation({ isLoaded }){
 
     sessionLinks = (
       <>
-        <NavLink to="/groups">Groups</NavLink>
-        <NavLink to={`/events/${sessionUser.city}/${sessionUser.state}}`}>Events</NavLink>
+        <NavLink to={`/groups/${sessionUser.city}/${sessionUser.state}`}>Groups</NavLink>
+        <NavLink to={`/events/${sessionUser.city}/${sessionUser.state}`}>Events</NavLink>
         <ProfileButton user={sessionUser}/>
       </>
     );

@@ -28,7 +28,7 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/groups" exact={true}>
+          <Route path="/groups/:city/:state" exact={true}>
             <GroupList/>
           </Route>
           <Route path="/events/:city/:state" exact={true}>

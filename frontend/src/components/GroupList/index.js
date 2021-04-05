@@ -5,12 +5,12 @@ import GroupsCard from './GroupCard';
 import { NavLink } from 'react-router-dom';
 
 function GroupList () {
-    const groups = useSelector(state => Object.values(state.groups))
-
+    const groups = useSelector(state => Object.values(state.groups));
+    const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getGroups())
+        dispatch(getGroups(user.city, user.state))
     }, [dispatch]);
 
     const renderGroups = () => {

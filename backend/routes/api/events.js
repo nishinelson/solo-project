@@ -6,7 +6,6 @@ const router = express.Router();
 
 //GET// http://localhost:5000/api/events
 router.get('/:city/:state', asyncHandler( async (req, res) => {
-    console.log(req.params)
     const { city, state } = req.params;
     const events = await Event.findAll({
         where: {
