@@ -59,6 +59,10 @@ module.exports = {
       userId: 15,
       groupId: 5
     },
+    {
+      userId: 1,
+      groupId: 4
+    },
   ], {});
     /*
       Add altering commands here.

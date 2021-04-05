@@ -39,7 +39,7 @@ export const getOneGroup = id => async (dispatch) => {
 const initialState = {};
 
 const groupReducer = (groups = initialState, action) => {
-    let newState;
+
     switch(action.type){
         case SET_GROUPS:
             const groupsPayload = action.payload
