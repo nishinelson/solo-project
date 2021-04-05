@@ -16,12 +16,12 @@ function GroupPage () {
 
     useEffect(() => {
         dispatch(getEvents())
-        // dispatch(getGroups())
         dispatch(getOneGroup(id))
     }, [dispatch]);
 
-    // console.log("HERE!!!:", group);
+
     let renderEvents = [];
+    let members = [];
     if(group.Events) {
         renderEvents = group.Events.map(event =>{
             return (
@@ -32,6 +32,10 @@ function GroupPage () {
         })
     }
 
+    if(group.Users){
+        members = group.Users;
+    }
+
     return (
         <div className='page'>
             <div className='top-half'>
@@ -39,6 +43,9 @@ function GroupPage () {
                 <div className='info'>
                     <div className='name'>{group.name}</div>
                     <div>{group.city}, {group.state}</div>
+                </div>
+                <div className='members'>
+                    Members: {members.length}
                 </div>
             </div>
             <div className='bottom-half'>

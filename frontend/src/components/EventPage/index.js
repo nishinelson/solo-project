@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getEvents } from '../../store/events';
+import { getOneEvent } from '../../store/events';
 import { useParams } from 'react-router-dom';
-import { getGroups } from '../../store/groups';
+// import { getGroups } from '../../store/groups';
 
 function EventPage () {
     const { id } = useParams();
@@ -10,8 +10,15 @@ function EventPage () {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getEvents())
+        dispatch(getOneEvent(id))
     }, [dispatch]);
+    console.log("EVENT!!!:", event.Users)
+
+    let attendees = [];
+
+    if(event.Users){
+        attendees = event.Users;
+    }
 
     return(
         <div>
@@ -20,6 +27,7 @@ function EventPage () {
             <div>{event.name}</div>
             <div>{event.details}</div>
             <div>{event.address}</div>
+            <div>Attendees: {attendees.length}</div>
         </div>
     )
 }

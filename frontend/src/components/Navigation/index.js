@@ -9,10 +9,12 @@ function Navigation({ isLoaded }){
 
   let sessionLinks;
   if (sessionUser) {
+
+
     sessionLinks = (
       <>
         <NavLink to="/groups">Groups</NavLink>
-        <NavLink to="/events">Events</NavLink>
+        <NavLink to={`/events/${sessionUser.city}/${sessionUser.state}}`}>Events</NavLink>
         <ProfileButton user={sessionUser}/>
       </>
     );

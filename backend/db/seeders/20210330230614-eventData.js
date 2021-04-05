@@ -19,8 +19,8 @@ module.exports = {
         details: faker.lorem.sentence(),
         imageUrl: faker.image.imageUrl(),
         date: faker.date.soon(),
-        city: faker.address.city(),
-        state: faker.address.stateAbbr(),
+        city: 'LA',
+        state: 'CA',
         address: faker.address.streetAddress(),
         userId: 3,
         groupId: 2

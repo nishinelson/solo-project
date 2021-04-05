@@ -1,6 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { Group, Event } = require('../../db/models');
+const { Group, Event, Member } = require('../../db/models');
 
 
 const router = express.Router();
@@ -14,8 +14,10 @@ router.get('/', asyncHandler( async (req, res) => {
 // http://localhost:5000/api/groups/:id
 router.get('/:id(\\d+)', asyncHandler( async (req, res) => {
     const id = Number(req.params.id);
-    const group = await Group.findOne({where: { id }, include: {model: Event}});
-    // const events = await Event.finAll({where: {groupId: id}})
+    const group = await Group.findOne({
+        where: { id },
+        include: {all: true}
+        });
     res.json(group);
 }));
 

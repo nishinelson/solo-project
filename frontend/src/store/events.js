@@ -21,8 +21,9 @@ export const getGroupEvents = (id) => async (dispatch) => {
     const response = await csrfFetch(`/api/groups/${id}`);
 }
 
-export const getEvents = () => async (dispatch) => {
-    const response = await csrfFetch('/api/events');
+export const getEvents = (city, state) => async (dispatch) => {
+    const response = await csrfFetch(`/api/events/${city}/${state}`)
+
     if(!response.ok){
         throw response;
     }
@@ -36,6 +37,7 @@ export const getOneEvent = id => async (dispatch) => {
         throw response;
     }
     const event = await response.json();
+
     dispatch(addEvent(event));
 }
 
@@ -54,7 +56,7 @@ const eventReducer = (events = initialState, action) =>{
         case ADD_EVENT:
             return {
                 ...events,
-                [action.payload.id]: action.event,
+                [action.payload.id]: action.payload,
             }
         default:
             return events;

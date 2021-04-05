@@ -1,6 +1,7 @@
 import '../GroupList/GroupCard.css'
 
 function EventCard ({event}) {
+// console.log("HERE!!!", event)
 
     return (
         <div className='card'>

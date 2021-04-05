@@ -5,14 +5,23 @@ const { Event } = require('../../db/models');
 const router = express.Router();
 
 //GET// http://localhost:5000/api/events
-router.get('/', asyncHandler( async (req, res) => {
-    const events = await Event.findAll();
+router.get('/:city/:state', asyncHandler( async (req, res) => {
+    console.log(req.params)
+    const { city, state } = req.params;
+    const events = await Event.findAll({
+        where: {
+            city, state,
+        }
+    });
     res.json(events);
 }));
 
 router.get('/:id(\\d+)', asyncHandler( async (req, res) =>{
-    const id = req.params.id;
-    const event = await Event.findOne({where: { id }});
+    const id = Number(req.params.id);
+    const event = await Event.findOne({
+        where: { id },
+        include: {all: true}
+    });
     res.json(event);
 }))
 
