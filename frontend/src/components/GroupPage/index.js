@@ -26,6 +26,8 @@ function GroupPage () {
     let renderEvents = [];
     let members = [];
     let membersObj = {};
+    let form = "";
+    let eventLink;
 
     if(group.Events) {
         renderEvents = group.Events.map(event =>{
@@ -48,18 +50,25 @@ function GroupPage () {
     }
 
     const handleSubmit = e => {
-        e.preventDefault();
+        // e.preventDefault();
         const userId = sessionUser.id;
         dispatch(joinGroup(userId, id))
         // setCount(count => count + 1)
     }
 
-    let form = "";
 
     if(!membersObj[sessionUser.id]){
 
             form = <form onSubmit={handleSubmit}><button type='submit'>Pledge Your Allegiance!</button></form>
 
+    }
+
+
+    if(sessionUser.id === group.userId) {
+        eventLink = (
+            // <NavLink to={{pathName:'/newForm', aboutProps: {groupId: id}}}>Create New Event</NavLink>
+            <NavLink to='/newForm'>Create New Event</NavLink>
+        )
     }
 
     return (
@@ -84,6 +93,9 @@ function GroupPage () {
                     <label>Upcoming Events:</label>
                     <div>
                         {renderEvents}
+                    </div>
+                    <div>
+                      {eventLink}
                     </div>
                 </div>
             </div>

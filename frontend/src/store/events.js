@@ -41,6 +41,19 @@ export const getOneEvent = id => async (dispatch) => {
     dispatch(addEvent(event));
 }
 
+export const createEvent = event => async (dispatch) => {
+    const { name, details, imageUrl, city, state, address, userId, groupId } = event;
+    const response = await csrfFetch('/api/events', {
+        method: "POST",
+        body: JSON.stringify({name, details, imageUrl, city, state, address, userId, groupId})
+    })
+    if(response.ok) {
+        const event = await response.json();
+        dispatch(addEvent(event))
+        return event;
+    }
+}
+
 const initialState = {};
 
 const eventReducer = (events = initialState, action) =>{

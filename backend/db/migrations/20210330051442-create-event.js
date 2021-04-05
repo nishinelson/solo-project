@@ -19,11 +19,11 @@ module.exports = {
       },
       imageUrl: {
         type: Sequelize.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       date: {
-        type: Sequelize.DATE,
-        allowNull: false,
+        type: Sequelize.STRING,
+        // allowNull: false,
       },
       city: {
         type: Sequelize.STRING,

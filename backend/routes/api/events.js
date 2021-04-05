@@ -25,5 +25,17 @@ router.get('/:id(\\d+)', asyncHandler( async (req, res) =>{
 }))
 
 //POST// http://localhost:5000/api/events
+router.post('/', asyncHandler( async (req, res) => {
+    const {name, details, imageUrl, city, state, address, userId, groupId} = req.body;
+    const event = await Event.create({name, details, imageUrl, city, state, address, userId, groupId});
+    return res.json(event);
+}))
+
+router.get('/', asyncHandler( async (req, res) => {
+    // const {name, details, img, city, state, address, userId, groupId} = req.body;
+    // const event = await Event.create({name, details, img, city, state, address, userId, groupId});
+    return res.json('test');
+}))
+
 
 module.exports = router;
