@@ -20,7 +20,7 @@ function Navigation({ isLoaded }){
       <>
         <NavLink to={`/groups/${sessionUser.city}/${sessionUser.state}`}>Groups</NavLink>
         <NavLink to={`/events/${sessionUser.city}/${sessionUser.state}`}>Events</NavLink>
-        <ProfileButton user={sessionUser}/>
+        <ProfileButton className='profileButton' user={sessionUser}/>
       </>
     );
   } else {
@@ -35,7 +35,7 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='navbar'>
-      <NavLink exact to="/">Questup</NavLink>
+      <NavLink className='home' exact to="/">Questup</NavLink>
       {isLoaded && sessionLinks}
     </div>
   );

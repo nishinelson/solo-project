@@ -1,8 +1,19 @@
 .navbar {
     border-bottom: solid 1px black;
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
 }
 
 .nav-container {
     display: flex;
     color: red;
+}
+
+.home {
+    display: flex;
+    align-self: flex-start;
+
 }

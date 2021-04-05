@@ -1,0 +1,21 @@
+.event-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: center;
+
+}
+
+.img {
+    height: 300px;
+    width: 600px;
+    border-radius: 10px;
+}
+
+.cont {
+    grid-column: 2;
+    margin-left: 15px;
+}
+
+.name {
+    font-size: 32px;
+}

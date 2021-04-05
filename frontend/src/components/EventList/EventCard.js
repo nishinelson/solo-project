@@ -8,6 +8,7 @@ function EventCard ({event}) {
             <img className='cardPic' src={event.imageUrl} alt='something'/>
             <div className='cardContent'>
                 <div className='cardLocation'>{event.date}</div>
+                <div>{event.city}, {event.state}</div>
                 <div className='cardName'>{event.name}</div>
                 <div className='cardDetails'>{event.about}</div>
             </div>

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { getOneEvent } from '../../store/events';
 import { useParams } from 'react-router-dom';
 import { joinEvent } from '../../store/rsvps';
-// import { getGroups } from '../../store/groups';
+import './EventPage.css';
 
 function EventPage () {
     const { id } = useParams();
@@ -44,14 +44,17 @@ function EventPage () {
     }
 
     return(
-        <div>
-            <img src={event.imageUrl} alt='eventImage'/>
-            <div>{event.date}</div>
-            <div>{event.name}</div>
-            <div>{event.details}</div>
-            <div>{event.address}</div>
-            <div>Attendees: {attendees.length}</div>
-            <div>{form}</div>
+        <div className='event-container'>
+            <div className='cont'>
+                <div className='name'>{event.name}</div>
+                <img className='img' src={event.imageUrl} alt='eventImage'/>
+                <div>{event.date}</div>
+                <div>{event.details}</div>
+                <div>{event.city}, {event.state}</div>
+                <div>{event.address}</div>
+                <div>Attendees: {attendees.length}</div>
+                <div>{form}</div>
+            </div>
 
         </div>
     )
