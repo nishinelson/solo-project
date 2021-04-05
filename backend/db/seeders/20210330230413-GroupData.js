@@ -7,7 +7,7 @@ module.exports = {
         name: "Nerd League",
         about: faker.lorem.sentence(),
         imageUrl: faker.image.imageUrl(),
-        userId: 2,
+        userId: 4,
         city: "Fullerton",
         state: "CA"
       },
@@ -15,8 +15,32 @@ module.exports = {
         name: "mtg cohort",
         about: faker.lorem.sentence(),
         imageUrl: faker.image.imageUrl(),
-        userId: 3,
+        userId: 2,
         city: "San Diego",
+        state: "CA"
+      },
+      {
+        name: "TableTop Guild",
+        about: faker.lorem.sentence(),
+        imageUrl: faker.image.imageUrl(),
+        userId: 3,
+        city: "Boulder",
+        state: "CO"
+      },
+      {
+        name: "LArp Angeles",
+        about: faker.lorem.sentence(),
+        imageUrl: faker.image.imageUrl(),
+        userId: 1,
+        city: "Los Angeles",
+        state: "CA"
+      },
+      {
+        name: "LAN League",
+        about: faker.lorem.sentence(),
+        imageUrl: faker.image.imageUrl(),
+        userId: 2,
+        city: "Los Angeles",
         state: "CA"
       }
     ], {});

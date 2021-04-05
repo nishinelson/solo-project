@@ -11,6 +11,54 @@ module.exports = {
       userId: 2,
       groupId: 1
     },
+    {
+      userId: 4,
+      groupId: 4
+    },
+    {
+      userId: 5,
+      groupId: 5
+    },
+    {
+      userId: 6,
+      groupId: 4
+    },
+    {
+      userId: 7,
+      groupId: 5
+    },
+    {
+      userId: 8,
+      groupId: 4
+    },
+    {
+      userId: 9,
+      groupId: 5
+    },
+    {
+      userId: 10,
+      groupId: 4
+    },
+    {
+      userId: 11,
+      groupId: 5
+    },
+    {
+      userId: 12,
+      groupId: 4
+    },
+    {
+      userId: 13,
+      groupId: 5
+    },
+    {
+      userId: 14,
+      groupId: 4
+    },
+    {
+      userId: 15,
+      groupId: 5
+    },
   ], {});
     /*
       Add altering commands here.
