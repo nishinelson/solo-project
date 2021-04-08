@@ -31,6 +31,7 @@ function EventPage () {
 
     const handleSubmit = e => {
         // e.preventDefault();
+        //look into how to rerender
         const userId = sessionUser.id;
         dispatch(joinEvent(userId, id))
     }
