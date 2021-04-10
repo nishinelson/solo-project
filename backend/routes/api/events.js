@@ -23,7 +23,7 @@ router.get('/:id(\\d+)', asyncHandler( async (req, res) =>{
     });
     res.json(event);
 }))
-
+//may need to revisit this route
 //POST// http://localhost:5000/api/events
 router.post('/', asyncHandler( async (req, res) => {
     const {name, details, imageUrl, city, state, address, userId, groupId} = req.body;
