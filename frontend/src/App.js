@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
-
+//check on new form path
   return (
     <>
       <Navigation isLoaded={isLoaded} />
